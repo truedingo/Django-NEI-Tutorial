@@ -1,0 +1,12 @@
+<h1>A minha primeira página!</h1>
+
+<a href="{% url 'pagina'%}">Homepage</a>
+<a href="{% url 'addprod'%}">Add Product</a>
+<a href="{% url 'login'%}">Login</a>
+<a href="{% url 'signup'%}">Sign Up</a>
+
+<br>
+{% for item in item_list%}
+    <p>Name: {{item.item_name}} </p>
+    <p>Price: {{item.item_price}} </p>
+{%endfor%}
