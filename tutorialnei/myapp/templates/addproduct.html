@@ -1,6 +1,15 @@
+<h1>Hello {{request.user}}</h1>
 <h1>Add Product</h1>
 
 <a href="{% url 'pagina'%}">Homepage</a>
 <a href="{% url 'addprod'%}">Add Product</a>
 <a href="{% url 'login'%}">Login</a>
 <a href="{% url 'signup'%}">Sign Up</a>
+<a href="{% url 'logout'%}">Logout</a>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{item_form}}
+    <button type="submit">Add</button>
+</form>
+

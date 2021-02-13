@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^addprod', views.add_product_view.as_view(), name='addprod'),
     url(r'^login', views.login_view.as_view(), name='login'),
     url(r'^signup', views.sign_up_view.as_view(), name='signup'),
+    url(r'^logout', views.logout_view, name='logout'),
 ]

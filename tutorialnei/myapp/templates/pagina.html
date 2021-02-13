@@ -1,12 +1,21 @@
+<h1>Hello {{request.user}}</h1>
 <h1>A minha primeira página!</h1>
 
 <a href="{% url 'pagina'%}">Homepage</a>
 <a href="{% url 'addprod'%}">Add Product</a>
 <a href="{% url 'login'%}">Login</a>
 <a href="{% url 'signup'%}">Sign Up</a>
+<a href="{% url 'logout'%}">Logout</a>
 
 <br>
 {% for item in item_list%}
     <p>Name: {{item.item_name}} </p>
     <p>Price: {{item.item_price}} </p>
 {%endfor%}
+
+<br>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="text" id="search_input" name="search_input">
+    <button type="submit">Search</button>
+</form>
